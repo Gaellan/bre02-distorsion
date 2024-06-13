@@ -20,9 +20,21 @@ class Router
         {
             echo "Je veux afficher la route pour ajouter une catégorie<br>";
         }
+        else if($route !== null && $route === 'get-category')
+        {
+            echo "Je veux afficher la route pour recuperer une catégorie<br>";
+        }
+        else if($route !== null && $route === 'get-categories')
+        {
+            echo "Je veux afficher la route pour recuperer les catégories<br>";
+        }
         else if($route !== null && $route === 'add-room')
         {
             echo "Je veux afficher la route pour ajouter un salon<br>";
+        }
+        else if($route !== null && $route === 'get-rooms')
+        {
+            echo "Je veux afficher la route pour recuperer les salon<br>";
         }
         else if($route !== null && $route === 'add-message')
         {
