@@ -5,16 +5,17 @@
  */
 class Router
 {
+    private DefaultController $dc;
     public function __construct()
     {
-
+        $this->dc = new DefaultController();
     }
 
     /* 1 URL === 1 ROUTE === UNE MÉTHODE DE CONTROLLER */
     public function handleRequest(? string $route) : void
     {
         if($route !== null && $route === 'home') {
-            echo "Je veux afficher la home<br>";
+            $this->dc->home();
         }
         else if($route !== null && $route === 'add-category')
         {
@@ -46,11 +47,11 @@ class Router
         }
         else if($route === null)
         {
-            echo "Pas de route<br>";
+            $this->dc->home();
         }
         else
         {
-            echo "La route n'existe pas<br>";
+            $this->dc->notFound();
         }
     }
 }
