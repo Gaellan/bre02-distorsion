@@ -14,11 +14,15 @@ class DefaultController
 
     public function home() : void
     {
-        echo "Je veux afficher la home<br>";
+        $template = "templates/home.phtml";
+
+        require "templates/layout.phtml";
     }
 
     public function notFound() : void
     {
-        echo "La route n'existe pas<br>";
+        $template = "templates/404.phtml";
+
+        require "templates/layout.phtml";
     }
 }
