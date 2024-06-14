@@ -6,9 +6,11 @@
 class Router
 {
     private DefaultController $dc;
+    private CategoryController $cc;
     public function __construct()
     {
         $this->dc = new DefaultController();
+        $this->cc = new CategoryController();
     }
 
     /* 1 URL === 1 ROUTE === UNE MÉTHODE DE CONTROLLER */
@@ -27,7 +29,7 @@ class Router
         }
         else if($route !== null && $route === 'get-categories')
         {
-            echo "Je veux afficher la route pour recuperer les catégories<br>";
+           $this->cc->getCategories();
         }
         else if($route !== null && $route === 'add-room')
         {
