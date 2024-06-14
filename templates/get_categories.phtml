@@ -1,7 +1,15 @@
-<?php
-
-echo "<pre>";
-var_dump($categories);
-echo "</pre>";
-
-?>
+<ul>
+    <?php
+        foreach($categories as $category)
+        {
+            ?>
+            <li>
+                <article>
+                    <h2><?= $category->getName(); ?></h2>
+                    <a href="">Voir la catégorie</a>
+                </article>
+            </li>
+            <?php
+        }
+    ?>
+</ul>
